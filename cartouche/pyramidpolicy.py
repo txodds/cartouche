@@ -53,7 +53,10 @@ class PyramidPolicy(object):
     def unauthenticated_userid(self, request):
         """ See IAuthenticationPolicy.
         """
-        raise NotImplementedError()
+        identity = self._getIdentity(request)
+        if identity is None:
+            return None
+        return identity['repoze.who.userid']
 
     def authenticated_userid(self, request):
         """ See IAuthenticationPolicy.
