@@ -50,7 +50,7 @@ setup(name='cartouche',
                ],
       install_requires=[
                'setuptools >= 0.6c7',
-               'ZODB3',
+               'ZODB3==3.10.5',
                'chameleon',
                'deform >= 0.9.5',
                'pyramid >= 1.3',
